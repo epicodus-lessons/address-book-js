@@ -7,13 +7,6 @@ $(document).ready(function() {
     var inputtedStreet = $("input#new-street").val();
     var inputtedCity = $("input#new-city").val();
     var inputtedState = $("input#new-state").val();
-    var newAddress = { street: inputtedStreet,
-                       city: inputtedCity,
-                       state: inputtedState,
-                       fullAddress: function() {
-                         return this.street + ", " + this.city + ", " + this.state;
-                       }
-                     };
     var newContact = { firstName: inputtedFirstName,
                        lastName: inputtedLastName,
                        address: newAddress.fullAddress()

@@ -1,19 +1,6 @@
-$(document).ready(function() {
-  $("form#new-contact").submit(function(event) {
-    event.preventDefault();
 
-    var inputtedFirstName = $("input#new-first-name").val();
-    var inputtedLastName = $("input#new-last-name").val();
-    var inputtedAddress = $("input#new-address").val();
-    var newContact = { firstName: inputtedFirstName, lastName: inputtedLastName, address: inputtedAddress };
 
-    $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + " " + newContact.lastName + "</span></li>");
-
-    $("input#new-first-name").val("");
-    $("input#new-last-name").val("");
-    $("input#new-address").val("");
-  });
-});
+JS
 
 <div class="col-md-6">
   <div id="show-contact">
@@ -25,6 +12,8 @@ $(document).ready(function() {
   </div>
 </div>
 
+
+CSS
 show-contact {
   display: none;
 }
@@ -37,3 +26,12 @@ show-contact {
 .contact:hover {
   text-decoration: underline;
 }
+
+HTML
+var newAddress = { street: inputtedStreet,
+                   city: inputtedCity,
+                   state: inputtedState,
+                   fullAddress: function() {
+                     return this.street + ", " + this.city + ", " + this.state;
+                   }
+                 };
